@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Information</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      overflow-x: hidden;
+      animation: backgroundAnimation 5s infinite alternate;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 4rem;
+      color: #f7f7f7;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      color: #eaeaea;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      padding: 20px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
+
+    .info-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .info-title {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease;
+    }
+
+    .info-text {
+      color: #ddd;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      animation: fadeIn 2s ease;
+    }
+
+    .contact-button {
+      margin: 30px auto;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      color: #333;
+      background: #f7f7f7;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      display: block;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-button:hover {
+      background: #4fa3f7;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .greeting {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #f7f7f7;
+      text-align: center;
+      margin-top: 50px;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+      }
+      100% {
+        background: linear-gradient(135deg, #2a5298, #1e3c72);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>About Me</h1>
+  <p>Delivering innovative solutions tailored to your needs.</p>
+
+  <!-- Dynamic Greeting -->
+  <div class="greeting" id="greetingMessage"></div>
+
+  <!-- Information Section -->
+  <div class="info-container">
+    <div class="info-box">
+      <h2 class="info-title">My Mission</h2>
+      <p class="info-text">
+        I am dedicated to providing high-quality software solutions, whether it's for academic projects, consulting, or building custom software tailored to your specific needs.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h2 class="info-title">What I Offer</h2>
+      <p class="info-text">
+        - Personalized consulting for startups.<br>
+        - Custom software and academic project development.<br>
+        - Pre-built projects for students to buy and learn from.<br>
+        I work alone to ensure every project receives dedicated attention and quality.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h2 class="info-title">Contact Me</h2>
+      <p class="info-text">
+        Have a project in mind? Let's work together to make it a reality. Reach out for a consultation or more details.
+      </p>
+    </div>
+
+  </div>
+
+  <button class="contact-button" onclick="contactUs()">Contact Me</button>
+
+  <script>
+    // Function to display dynamic greeting based on time
+    function displayGreeting() {
+      const hours = new Date().getHours();
+      let greetingMessage = '';
+
+      if (hours >= 5 && hours < 12) {
+        greetingMessage = 'Good Morning!';
+      } else if (hours >= 12 && hours < 18) {
+        greetingMessage = 'Good Afternoon!';
+      } else {
+        greetingMessage = 'Good Evening!';
+      }
+
+      document.getElementById('greetingMessage').innerText = greetingMessage;
+    }
+
+    // Call the function on page load
+    window.onload = displayGreeting;
+
+    // JavaScript for the Contact Button
+    function contactUs() {
+      alert("Thank you for your interest! Reach out to me at: https://praveenhallur123.github.io/Praveen-Portfolio-/");
+    }
+  </script>
+
+</body>
+</html>
